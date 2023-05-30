@@ -46,3 +46,20 @@ route::get("/coba/request", [CobaController::class, "request"]);
 
 
 route::post("/coba/nested-request", [CobaController::class, "nestedRequest"]);
+
+route::get("/response/index", [App\Http\Controllers\bazmacontroler::class, 'responsefunction']);
+route::get("/response/header", [App\Http\Controllers\bazmacontroler::class, 'responseheader']);
+route::get("enkripsi/code", [app\http\controller\bazmacontroler::class, 'encryptiondata']);
+
+
+
+route::get("/redirect/from", [app\http\controller\bazmacontroler::class, 'redirectfrom']);
+route::get("/redirect/to", [app\http\controller\bazmacontroler::class, 'redirectto']);
+
+route::get("/redirect/to/named", [app\http\controller\bazmacontroler::class, 'redirecttonamedroute'])->name("redirect . to");
+route::get("/redirect/from/named", [app\http\controller\bazmacontroler::class, 'redirectfromnamedroute']);
+
+route::get("/category", [app\http\controllers\pages\homecontroler::class, 'category'])->name("category");
+route::get("/author", [app\http\controllers\pages\homecontroler::class, 'author'])->name("author");
+route::get("/borrowings", [app\http\controllers\pages\homecontroler::class, 'borrowings'])->name("borrowing");
+
